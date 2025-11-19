@@ -8,7 +8,7 @@ const MovieSchema = new mongoose.Schema(
             required : true,
             trim : true,
         },
-        tahunRIlis : {
+        tahunRilis : {
             type : String,
             required : true,
             trim : true,
