@@ -2,31 +2,83 @@
 	"info": {
 		"_postman_id": "908432d9-1b57-4c33-a976-9cbb6ef6bc0f",
 		"name": "Alfin_Movie",
-		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "49247026",
 		"_collection_link": "https://alfinn-4031458.postman.co/workspace/Alfin's-Workspace~bc501621-2c3c-4657-8435-f16e3d9ae996/collection/49247026-908432d9-1b57-4c33-a976-9cbb6ef6bc0f?action=share&source=collection_link&creator=49247026"
 	},
 	"item": [
 		{
-			"name": "New Request",
+			"name": "SignUp & SignIn",
 			"request": {
 				"method": "POST",
-				"header": [],
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer",
+						"type": "text"
+					}
+				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"judul\" : \"Breaking Bad\",\r\n    \"tahunRilis\": \"1998\",\r\n    \"sutradara\" : \"Alfin\"\r\n\r\n}",
+					"raw": "{\r\n    \"email\": \"AlfinAJA@kamus.com\",\r\n    \"password\": \"FINFIN\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
 						}
 					}
 				},
-				"url": "http://localhost:3000/api/movie"
+				"url": {
+					"raw": "http://localhost:3000/api/signin",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"signin"
+					]
+				}
 			},
 			"response": []
 		},
 		{
-			"name": "New Request",
+			"name": "Create Movie",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjkyN2U5MDQ1NjE0MjhmYTMyOWMzMGU2IiwidXNlcm5hbWUiOiJBbGZpbiIsImlhdCI6MTc2NDIyMzI0NCwiZXhwIjoxNzY0MjI0MTQ0fQ._idrzO_V_uGYxw9nPI6kqz4TrUSBk25y6jRFYT3ny_0",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"judul\": \"Chipmunk\",\r\n    \"tahunRilis\": \"2000\",\r\n    \"sutradara\": \"Jawir Nolan\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/movie",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"movie"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Movie",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -35,7 +87,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjkyN2U0MTVhMGMyZjc5YTczZDk4OTBkIiwidXNlcm5hbWUiOiJTYWhyb25pRFBSIiwiaWF0IjoxNzY0MjIxOTgyLCJleHAiOjE3NjQyMjI4ODJ9.TGLPLUQ5mRynzRsKpf6J13PG37l8oFq6XGjV-19zigY",
 						"type": "text"
 					}
 				],
@@ -48,7 +100,18 @@
 						}
 					}
 				},
-				"url": "http://localhost:3000/api/movie"
+				"url": {
+					"raw": "http://localhost:3000/api/movie",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"movie"
+					]
+				}
 			},
 			"response": []
 		},
@@ -56,17 +119,35 @@
 			"name": "New Request",
 			"request": {
 				"method": "PUT",
-				"header": [],
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjkyN2U5MDQ1NjE0MjhmYTMyOWMzMGU2IiwidXNlcm5hbWUiOiJBbGZpbiIsImlhdCI6MTc2NDIyMzI0NCwiZXhwIjoxNzY0MjI0MTQ0fQ._idrzO_V_uGYxw9nPI6kqz4TrUSBk25y6jRFYT3ny_0",
+						"type": "text"
+					}
+				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"judul\" : \"Breaking Good\",\r\n    \"tahunRilis\": \"2000\",\r\n    \"sutradara\" : \"Alfin Juga\"\r\n\r\n}",
+					"raw": "{\r\n    \"judul\" : \"Chipmank wow\",\r\n    \"tahunRilis\": \"2000\",\r\n    \"sutradara\" : \"Alfin WIR\"\r\n\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
 						}
 					}
 				},
-				"url": "http://localhost:3000/api/movie/69001e78f7afd75472cbb61a"
+				"url": {
+					"raw": "http://localhost:3000/api/movie/6927e924561428fa329c30e9",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"movie",
+						"6927e924561428fa329c30e9"
+					]
+				}
 			},
 			"response": []
 		},
@@ -75,7 +156,19 @@
 			"request": {
 				"method": "DELETE",
 				"header": [],
-				"url": "http://localhost:3000/api/movie/69001e78f7afd75472cbb61a"
+				"url": {
+					"raw": "http://localhost:3000/api/movie/69001e78f7afd75472cbb61a",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"movie",
+						"69001e78f7afd75472cbb61a"
+					]
+				}
 			},
 			"response": []
 		}
